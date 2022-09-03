@@ -5,11 +5,11 @@ const formParseJson = require("../utilities/formParseJson");
 const userFilePath = path.join(__dirname, "..", "data.json");
 
 exports.ValidSaveUser = [
-  check("name").notEmpty().withMessage("name is required"),
-  check("gender").notEmpty().withMessage("gender is required"),
-  check("contact").notEmpty().withMessage("contact is required"),
-  check("address").notEmpty().withMessage("address is required"),
-  check("photoURL").notEmpty().withMessage("photoURL is required"),
+  check("name").notEmpty().withMessage("Name is required"),
+  check("gender").notEmpty().withMessage("Gender is required"),
+  check("contact").notEmpty().withMessage("Contact is required"),
+  check("address").notEmpty().withMessage("Address is required"),
+  check("photoURL").notEmpty().withMessage("PhotoURL is required"),
 ];
 
 exports.userIdValid = (req, res, next) => {
