@@ -132,7 +132,8 @@ module.exports.bulkUpdate = async (req, res) => {
             return u;
           }
         });
-        const stringified = JSON.stringify(u);
+        const stringified = JSON.stringify(updateEntries);
+        console.log(stringified)
         fs.writeFile(userFilePath, stringified, (err) => {
           if (err) {
             return res.status(400).json({
