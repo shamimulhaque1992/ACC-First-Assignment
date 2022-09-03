@@ -1,26 +1,34 @@
 [
   {
     "id": "1",
-    "gender": "dfgmale",
+    "gender": "male",
     "contact": "01779312970",
-    "photoURL": "https://randomuser.me/api/portraits/women/34.jpg",
-    "address": "9815 W Gray St",
-    "name": "Joann Burke"
+    "photoURL": "https://randomuser.me/api/portraits/men/39.jpg",
+    "address": "Pakistan",
+    "name": "Ashraf Anwar"
   },
   {
     "id": "2",
-    "gender": "female",
-    "contact": "(690) 770-6998",
-    "photoURL": "https://randomuser.me/api/portraits/women/34.jpg",
-    "address": "9815 W Gray St",
-    "name": "Joann Burke"
+    "gender": "male",
+    "contact": "01779312970",
+    "photoURL": "https://randomuser.me/api/portraits/men/6.jpg",
+    "address": "USA",
+    "name": "Daily daniyal"
   },
   {
     "id": "3",
-    "gender": "female",
-    "contact": "(729) 980-0898",
-    "photoURL": "https://randomuser.me/api/portraits/women/31.jpg",
-    "address": "4245 First Street",
-    "name": "Danielle Perry"
+    "gender": "male",
+    "contact": "01779312970",
+    "photoURL": "https://randomuser.me/api/portraits/men/50.jpg",
+    "address": "Bangladesh",
+    "name": "Siddiq Reza"
+  },
+  {
+    "id": "4",
+    "gender": "male",
+    "contact": "01779312970",
+    "photoURL": "https://randomuser.me/api/portraits/men/0.jpg",
+    "address": "Pakistan",
+    "name": "Fahim Shariar"
   }
 ]

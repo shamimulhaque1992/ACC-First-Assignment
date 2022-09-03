@@ -12,7 +12,6 @@ module.exports.allUsers = (req, res) => {
   fs.readFile(userFilePath, (err, data) => {
     if (err) {
       return res.status(400).json({
-        success: false,
         error: "400 Bad Request",
       });
     }
@@ -20,7 +19,6 @@ module.exports.allUsers = (req, res) => {
       const parsedUsers = formParseJson(data);
       const users = size ? parsedUsers.slice(0, size) : parsedUsers;
       return res.status(200).json({
-        success: true,
         users,
       });
     }
@@ -32,7 +30,6 @@ module.exports.randomUser = (req, res) => {
   fs.readFile(userFilePath, (err, users) => {
     if (err) {
       return res.status(400).json({
-        success: false,
         error: "400 Bad Request",
       });
     }
@@ -40,7 +37,6 @@ module.exports.randomUser = (req, res) => {
       const parsedUsers = formParseJson(users);
       const randomUser = getRandomUser(parsedUsers);
       return res.status(200).json({
-        success: true,
         user: randomUser,
       });
     }
@@ -52,7 +48,6 @@ module.exports.saveAUser = async (req, res) => {
   fs.readFile(userFilePath, (err, users) => {
     if (err) {
       return res.status(400).json({
-        success: false,
         error: "Something Went wrong",
       });
     } else {
@@ -63,12 +58,10 @@ module.exports.saveAUser = async (req, res) => {
       fs.writeFile(userFilePath, allUsers, (err) => {
         if (err) {
           return res.status(400).json({
-            success: false,
             error: "Something Went wrong",
           });
         } else {
           res.status(201).json({
-            success: true,
             message: "User Saved Successfully",
           });
         }
@@ -82,7 +75,6 @@ module.exports.updateUser = (req, res) => {
   fs.readFile(userFilePath, (err, data) => {
     if (err) {
       return res.status(400).json({
-        success: false,
         error: "400 Bad Request",
       });
     }
@@ -105,7 +97,6 @@ module.exports.updateUser = (req, res) => {
         fs.writeFile(userFilePath, stringified, (err) => {
           if (err) {
             return res.status(400).json({
-              success: false,
               error: "400 Bad Request",
             });
           }
@@ -113,7 +104,6 @@ module.exports.updateUser = (req, res) => {
     }
   });
   res.status(200).json({
-    success: true,
     message: "200 successfully update",
   });
 };
@@ -124,7 +114,6 @@ module.exports.bulkUpdate = async (req, res) => {
     fs.readFile(userFilePath, (err, data) => {
       if (err) {
         return res.status(400).json({
-          success: false,
           error: "400 Bad Request",
         });
       }
@@ -147,7 +136,6 @@ module.exports.bulkUpdate = async (req, res) => {
         fs.writeFile(userFilePath, stringified, (err) => {
           if (err) {
             return res.status(400).json({
-              success: false,
               error: "400 Bad Request",
             });
           }
@@ -156,7 +144,6 @@ module.exports.bulkUpdate = async (req, res) => {
     });
   }
   res.status(200).json({
-    success: true,
     message: "200 successfully update",
   });
 };
@@ -166,7 +153,6 @@ module.exports.deleteUser = (req, res) => {
   fs.readFile(userFilePath, (err, data) => {
     if (err) {
       return res.status(400).json({
-        success: false,
         error: "400 Bad Request",
       });
     }
@@ -176,12 +162,10 @@ module.exports.deleteUser = (req, res) => {
       fs.writeFile(userFilePath, JSON.stringify(usersAfterRemove), (err) => {
         if (err) {
           return res.status(400).json({
-            success: false,
             error: "400 Bad Request",
           });
         } else {
           res.status(200).json({
-            success: true,
             message: "user deleted",
           });
         }
